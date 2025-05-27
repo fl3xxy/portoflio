@@ -33,18 +33,15 @@ export const Navbar: React.FC = () => {
       <NavContainer>
         <NavLeft>Tom.dev</NavLeft>
         <NavRight isOpen={isResponsiveNavOpen}>
-          <LinkNav>Hire</LinkNav>
+          <LinkNav>Home</LinkNav>
           <LinkNav>
-            <span>About</span>
+            <span>Projects</span>
           </LinkNav>
-          <LinkNav>Projects</LinkNav>
+          <LinkNav>Experience</LinkNav>
           <LinkNav>
-            <span>Experience</span>
+            <span>Skills</span>
           </LinkNav>
-          <LinkNav>Skills</LinkNav>
-          <LinkNav>
-            <span>Contact</span>
-          </LinkNav>
+          <LinkNav>Contact</LinkNav>
         </NavRight>
         <NavBurger onClick={showNavbar}>
           {isResponsiveNavOpen ? <FaAlignRight /> : <FaAlignJustify />}

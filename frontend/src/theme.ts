@@ -7,16 +7,27 @@ declare module 'styled-components' {
       headingText: string;
       text: string;
       secText: string;
+      thText: string;
       disabledText: string;
     };
+    backgroundColors: {
+      grey: string;
+      lightGrey: string;
+    };
     fontSizes: {
-      headingText: {
+      largeText: {
         default: string;
         laptop: string;
         tablet: string;
         mobile: string;
       };
-      text: {
+      mediumText: {
+        default: string;
+        laptop: string;
+        tablet: string;
+        mobile: string;
+      };
+      smallText: {
         default: string;
         laptop: string;
         tablet: string;
@@ -36,7 +47,12 @@ export const theme: DefaultTheme = {
     headingText: '#fafafa',
     text: '#ffffff',
     secText: '#b2e58b',
+    thText: '#306317',
     disabledText: '#d9d9d9',
+  },
+  backgroundColors: {
+    grey: 'rgba(31, 31, 31, 0.6)',
+    lightGrey: 'rgba(47, 47, 47, 0.86)',
   },
 
   devices: {
@@ -46,13 +62,21 @@ export const theme: DefaultTheme = {
   },
 
   fontSizes: {
-    headingText: {
+    largeText: {
+      default: '4rem',
+      laptop: '3rem',
+      tablet: '2rem',
+      mobile: '1.2rem',
+    },
+
+    mediumText: {
       default: '1rem',
       laptop: '0.95rem',
       tablet: '0.9rem',
       mobile: '0.85rem',
     },
-    text: {
+
+    smallText: {
       default: '0.875rem',
       laptop: '0.825rem',
       tablet: '0.8rem',
