@@ -15,6 +15,7 @@ export const LandingSectionOne = styled.section`
   opacity: 0;
   animation: ${fadeInUp} 1.5s ease-out forwards;
   animation-delay: 0.4s;
+
   @media ${({ theme }) => theme.devices.laptop} {
     gap: 1rem;
   }
@@ -73,6 +74,11 @@ export const LandingSectionTwo = styled.section`
   padding: 0 1rem;
   animation: ${fadeInUp} 1.5s ease-out forwards;
   animation-delay: 1.5s;
+
+  @media ${({ theme }) => theme.devices.tablet} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 export const LandingSectionTwoLeft = styled.section`
   display: flex;
@@ -81,6 +87,7 @@ export const LandingSectionTwoLeft = styled.section`
   background-color: ${({ theme }) => theme.backgroundColors.grey};
   border-radius: 1rem;
   align-self: stretch;
+  align-items: center;
 `;
 export const LandingSectionTwoRight = styled.section`
   display: flex;
@@ -89,6 +96,7 @@ export const LandingSectionTwoRight = styled.section`
   background-color: ${({ theme }) => theme.backgroundColors.lightGrey};
   border-radius: 1rem;
   align-self: stretch;
+  align-items: center;
 `;
 export const LandingSectionTwoHeader = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.largeText.tablet};
@@ -101,7 +109,7 @@ export const LandingSectionTwoHeader = styled.p`
 export const LandingSectionTwoContent = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.mediumText.default};
   color: ${({ theme }) => theme.colors.disabledText};
-  text-align: left;
+  text-align: center;
   max-width: 80%;
   flex-direction: column;
   span {
@@ -111,6 +119,9 @@ export const LandingSectionTwoContent = styled.p`
 export const LandingSectionTwoLinkContainer = styled.div`
   display: flex;
   gap: 1rem;
+  @media ${({ theme }) => theme.devices.mobile} {
+    gap: 0.5rem;
+  }
 `;
 export const LandingSectionTwoLink = styled.a`
   color: ${({ theme }) => theme.colors.text};

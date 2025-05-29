@@ -12,6 +12,6 @@ export const GlobalStyles = createGlobalStyle`
         list-style: none;
         text-decoration: none;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        background-color: black;
+        background: radial-gradient(circle at top left, #1a1a1a, #000000);
     }
 `;

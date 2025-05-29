@@ -7,7 +7,7 @@ import { Navbar } from './components/modules/Navbar/Navbar.tsx';
 
 //views
 import { LandingView } from './components/views/LandingView/LandingView.tsx';
-
+import { ProjectsView } from './components/views/ProjectsView/ProjectsView.tsx';
 function App() {
   return (
     <>
@@ -15,6 +15,7 @@ function App() {
         <GlobalStyles />
         <Navbar />
         <LandingView />
+        <ProjectsView />
       </ThemeProvider>
     </>
   );
