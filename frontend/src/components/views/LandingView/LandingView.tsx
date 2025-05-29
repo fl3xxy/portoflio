@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   LandingContainer,
   LandingSectionOne,
@@ -10,6 +11,7 @@ import {
   LandingSectionTwoContent,
   LandingSectionTwoLinkContainer,
   LandingSectionTwoLink,
+  CopiedInfo,
 } from './LandingView.styles';
 import cv from '/public/files/Tomasz Mielnicki.pdf';
 import photo from '../../../assets/me.png';
@@ -20,17 +22,26 @@ import {
   FaEnvelope,
 } from 'react-icons/fa';
 export const LandingView: React.FC = () => {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText('mielnicki-tomek@wp.pl').then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
   return (
     <>
-      <LandingContainer>
+      <LandingContainer id="home">
         <LandingSectionOne>
           <LandingSectionOneText>
-            Hello, I'm <span>Tom</span>.
+            Hi, It's <span>Tom</span>.
           </LandingSectionOneText>
           <LandingSectionOnePhoto>
             <img src={photo} alt="photo" />
           </LandingSectionOnePhoto>
-          <LandingSectionOneText>I code with style.</LandingSectionOneText>
+          <LandingSectionOneText>
+            I'm <span className="sec">Web Dev</span>
+          </LandingSectionOneText>
         </LandingSectionOne>
         <LandingSectionTwo>
           <LandingSectionTwoLeft>
@@ -72,8 +83,11 @@ export const LandingView: React.FC = () => {
               </LandingSectionTwoLinkContainer>
               <LandingSectionTwoLinkContainer>
                 <FaEnvelope />
-                <LandingSectionTwoLink href="mailto:mielnicki-tomek@wp.pl">
-                  Mail
+                <LandingSectionTwoLink onClick={handleCopy}>
+                  <span>Copy e-mail</span>
+                  <CopiedInfo className={copied ? 'visible' : ''}>
+                    Copied
+                  </CopiedInfo>
                 </LandingSectionTwoLink>
               </LandingSectionTwoLinkContainer>
             </LandingSectionTwoContent>

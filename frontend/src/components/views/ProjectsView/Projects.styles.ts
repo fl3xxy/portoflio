@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 export const ProjectsContainer = styled.section`
   height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 0 1rem;
 
   @media ${({ theme }) => theme.devices.mobile} {
-    padding-top: 5rem;
+    margin-top: 6rem;
+    padding: 0 0.3rem;
     flex-direction: column;
     height: fit-content;
   }
@@ -24,16 +26,14 @@ export const ProjectDescriptionText = styled.p`
 
   @media ${({ theme }) => theme.devices.mobile} {
     font-size: ${({ theme }) => theme.fontSizes.mediumText.default};
+    width: fit-content;
   }
 `;
 // Left projectsview
 export const ProjectsSectionLeft = styled.div`
   display: flex;
-  flex: 1;
-  flex-direction: column;
   gap: 3rem;
   align-items: center;
-
   @media ${({ theme }) => theme.devices.mobile} {
     flex-direction: row;
     height: fit-content;
@@ -43,6 +43,9 @@ export const ProjectsSectionLeft = styled.div`
 export const CirclesContainer = styled.div`
   background-color: ${({ theme }) => theme.backgroundColors.lightGrey};
   border-radius: 2rem;
+  box-shadow:
+    0 0 12px 4px ${({ theme }) => theme.colors.thText},
+    0 0 24px 8px ${({ theme }) => theme.colors.thText};
 
   @media ${({ theme }) => theme.devices.mobile} {
     display: flex;
@@ -64,23 +67,31 @@ export const ProjectsLeftCircle = styled.div<{ selected: boolean }>`
   cursor: pointer;
   transition: all 0.8s ease;
 
-  @media ${({ theme }) => theme.devices.tablet} {
+  @media ${({ theme }) => theme.devices.laptop} {
     height: 14rem;
     width: 14rem;
   }
+  @media ${({ theme }) => theme.devices.tablet} {
+    height: 12rem;
+    width: 12rem;
+  }
   @media ${({ theme }) => theme.devices.mobile} {
-    height: 5rem;
-    width: 5rem;
+    height: 8rem;
+    width: 8rem;
   }
 `;
 
 // Right projectsview
 export const ProjectsSectionRight = styled.div`
   display: flex;
-  flex: 1;
+  max-width: 60%;
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
+
+  @media ${({ theme }) => theme.devices.mobile} {
+    max-width: fit-content;
+  }
 `;
 
 export const ProjectsRightHeader = styled.p`
@@ -105,6 +116,12 @@ export const ProjectsRightContainer = styled.div`
   background-color: ${({ theme }) => theme.backgroundColors.grey};
   border-radius: 0 3rem 0 3rem;
   border: 2px solid ${({ theme }) => theme.backgroundColors.grey};
+  box-shadow:
+    0 0 12px 4px ${({ theme }) => theme.backgroundColors.grey},
+    0 0 24px 8px ${({ theme }) => theme.backgroundColors.grey};
+  @media ${({ theme }) => theme.devices.mobile} {
+    max-width: 100%;
+  }
 `;
 
 export const ProjectsSectionRightOne = styled.div`
@@ -130,6 +147,7 @@ export const ProjectsSectionRightOneOptions = styled.div<{ selected: boolean }>`
   }
   @media ${({ theme }) => theme.devices.mobile} {
     font-size: ${({ theme }) => theme.fontSizes.largeText.mobile};
+    padding: 0.8rem;
   }
 `;
 
@@ -151,9 +169,10 @@ export const ProjectsMoreBtn = styled.a`
   text-decoration: none;
   cursor: pointer;
   transition: all ease 2s;
-
+  box-shadow:
+    0 0 12px 4px ${({ theme }) => theme.backgroundColors.lightGrey},
+    0 0 24px 8px ${({ theme }) => theme.backgroundColors.lightGrey};
   &:hover {
-    opacity: 0.7;
     color: ${({ theme }) => theme.colors.disabledText};
     border-color: ${({ theme }) => theme.colors.disabledText};
     background-color: black;
@@ -162,5 +181,8 @@ export const ProjectsMoreBtn = styled.a`
   @media ${({ theme }) => theme.devices.tablet} {
     font-size: ${({ theme }) => theme.fontSizes.mediumText.mobile};
     padding: 0.5rem;
+  }
+  @media ${({ theme }) => theme.devices.mobile} {
+    right: 0.1rem;
   }
 `;

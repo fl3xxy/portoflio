@@ -7,6 +7,9 @@ export const NavContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.backgroundColors.grey};
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 `;
 
 export const NavLeft = styled.div`
@@ -15,7 +18,12 @@ export const NavLeft = styled.div`
   display: flex;
   padding-left: 1rem;
   color: ${({ theme }) => theme.colors.headingText};
-
+  span {
+    text-shadow:
+      0 0 5px ${({ theme }) => theme.colors.headingText},
+      0 0 8px ${({ theme }) => theme.colors.headingText},
+      0 0 10px ${({ theme }) => theme.colors.headingText};
+  }
   @media ${({ theme }) => theme.devices.laptop} {
     font-size: ${({ theme }) => theme.fontSizes.mediumText.laptop};
   }
@@ -27,7 +35,7 @@ export const NavLeft = styled.div`
   }
 `;
 
-export const NavRight = styled.div<{ isOpen?: boolean }>`
+export const NavRight = styled.div<{ $isOpen: boolean }>`
   padding-right: 1rem;
   display: flex;
   align-items: center;
@@ -40,7 +48,7 @@ export const NavRight = styled.div<{ isOpen?: boolean }>`
   }
   @media ${({ theme }) => theme.devices.tablet} {
     background-color: rgba(74, 74, 74, 0.9);
-    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
     font-size: ${({ theme }) => theme.fontSizes.largeText.mobile};
     position: fixed;
     flex-direction: column;
@@ -57,7 +65,7 @@ export const LinkNav = styled.a`
   cursor: pointer;
   font-size: ${({ theme }) => theme.fontSizes.smallText.default};
   color: ${({ theme }) => theme.colors.text};
-
+  text-decoration: none;
   &:hover {
     opacity: 0.6;
   }

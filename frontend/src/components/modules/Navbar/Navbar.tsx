@@ -1,5 +1,5 @@
 //react
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 //styles
 import {
@@ -31,14 +31,16 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <NavContainer>
-        <NavLeft>Tom.dev</NavLeft>
-        <NavRight isOpen={isResponsiveNavOpen}>
-          <LinkNav>Home</LinkNav>
-          <LinkNav>
+        <NavLeft>
+          <span>Tom</span>.dev
+        </NavLeft>
+        <NavRight $isOpen={isResponsiveNavOpen}>
+          <LinkNav href="#home">Home</LinkNav>
+          <LinkNav href="#projects">
             <span>Projects</span>
           </LinkNav>
-          <LinkNav>Experience</LinkNav>
-          <LinkNav>
+          <LinkNav href="#experience">Experience</LinkNav>
+          <LinkNav href="#skills">
             <span>Skills</span>
           </LinkNav>
           <LinkNav>Contact</LinkNav>

@@ -19,6 +19,7 @@ import {
 import { PiTreeStructureDuotone } from 'react-icons/pi';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { MdComputer } from 'react-icons/md';
+import { BackgroundText } from '../../modules/BackgroundText';
 
 type ProjectOption = 'data' | 'startup' | 'webapp';
 
@@ -83,7 +84,8 @@ export const ProjectsView: React.FC = () => {
   };
   return (
     <>
-      <ProjectsContainer>
+      <ProjectsContainer id="projects">
+        <BackgroundText>Projects</BackgroundText>
         <ProjectsSectionLeft>
           <CirclesContainer>
             <ProjectsLeftCircle
