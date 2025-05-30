@@ -10,6 +10,8 @@ import { LandingView } from './components/views/LandingView/LandingView.tsx';
 import { ProjectsView } from './components/views/ProjectsView/ProjectsView.tsx';
 import { ExperienceView } from './components/views/ExperienceView/ExperienceView.tsx';
 import { SkillsView } from './components/views/SkillsView/SkillsView.tsx';
+import { ContactView } from './components/views/ContactView/ContactView.tsx';
+import { Footer } from './components/modules/Footer/Footer.tsx';
 function App() {
   return (
     <>
@@ -20,6 +22,8 @@ function App() {
         <ProjectsView />
         <ExperienceView />
         <SkillsView />
+        <ContactView />
+        <Footer />
       </ThemeProvider>
     </>
   );

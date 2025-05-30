@@ -51,6 +51,7 @@ export const SkillsView: React.FC = () => {
         <SkillBoxDescription>
           <SkillLanguageContainer>
             <SkillLanguage>
+              <span>{value}% </span>
               {icon} {name}
             </SkillLanguage>
             <ProgressBarContainer>

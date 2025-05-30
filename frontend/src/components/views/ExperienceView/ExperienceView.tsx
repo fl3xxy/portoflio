@@ -26,8 +26,6 @@ export const ExperienceView: React.FC = () => {
               <ExperienceBoxSecondSection>
                 <ExperienceBoxFTitle>Work experience</ExperienceBoxFTitle>
                 <ExperienceBoxContentContainer>
-                  {' '}
-                  {/* tu sie zaczyna */}
                   <ExperienceBoxContent>
                     <ExperienceBoxContentTitle>
                       MGT Merx
@@ -56,8 +54,6 @@ export const ExperienceView: React.FC = () => {
               <ExperienceBoxSecondSection>
                 <ExperienceBoxFTitle>Education</ExperienceBoxFTitle>
                 <ExperienceBoxContentContainer>
-                  {' '}
-                  {/* tu sie zaczyna */}
                   <ExperienceBoxContent>
                     <ExperienceBoxContentTitle>
                       Adam Mickiewicz 1st General Secondary School, Stargard

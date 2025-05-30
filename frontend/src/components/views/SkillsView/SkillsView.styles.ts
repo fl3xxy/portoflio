@@ -54,6 +54,8 @@ export const SkillBoxOption = styled.div<{ selected: boolean }>`
       0 0 18px 8px ${theme.backgroundColors.lightGrey}
     `};
   cursor: pointer;
+  transition: all 0.8s ease-in-out;
+
   @media (max-width: 1000px) {
     width: 40vw;
     height: 20vw;
@@ -70,6 +72,7 @@ export const SkillsBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   @media (max-width: 1000px) {
     width: 100%;
   }
@@ -89,12 +92,22 @@ export const SkillLanguageContainer = styled.div`
   }
 `;
 
+export const ProgressFill = styled.div<ProgressProps>`
+  width: ${({ value }) => value}%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.colors.thText};
+  transition: width 0.3s ease-in-out;
+`;
+
 export const SkillLanguage = styled.p`
   color: ${({ theme }) => theme.colors.disabledText};
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: ${({ theme }) => theme.fontSizes.mediumText.tablet};
+  span {
+    color: ${({ theme }) => theme.colors.secText};
+  }
 `;
 
 export const ProgressBarContainer = styled.div`
@@ -109,12 +122,6 @@ export const ProgressBarContainer = styled.div`
   }
 `;
 
-export const ProgressFill = styled.div<ProgressProps>`
-  width: ${({ value }) => value}%;
-  height: 100%;
-  background-color: ${({ theme }) => theme.colors.thText};
-  transition: width 0.3s ease-in-out;
-`;
 export const PercentageLabel = styled.p`
   font-size: 0.9rem;
   color: ${({ theme }) => theme.colors.headingText};

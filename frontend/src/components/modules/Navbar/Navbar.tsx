@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
           <LinkNav href="#skills">
             <span>Skills</span>
           </LinkNav>
-          <LinkNav>Contact</LinkNav>
+          <LinkNav href="#contact">Contact</LinkNav>
         </NavRight>
         <NavBurger onClick={showNavbar}>
           {isResponsiveNavOpen ? <FaAlignRight /> : <FaAlignJustify />}

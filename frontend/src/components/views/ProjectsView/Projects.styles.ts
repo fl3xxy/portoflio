@@ -82,6 +82,21 @@ export const ProjectsLeftCircle = styled.div<{ selected: boolean }>`
 `;
 
 // Right projectsview
+export const ProjectsRightHeader = styled.p`
+  position: relative;
+  font-size: ${({ theme }) => theme.fontSizes.largeText.laptop};
+  color: ${({ theme }) => theme.colors.text};
+  font-weight: bold;
+  opacity: 0.7;
+  transition: all 0.8s ease-in-out;
+
+  @media ${({ theme }) => theme.devices.tablet} {
+    font-size: ${({ theme }) => theme.fontSizes.largeText.tablet};
+  }
+  @media ${({ theme }) => theme.devices.mobile} {
+    font-size: ${({ theme }) => theme.fontSizes.largeText.tablet};
+  }
+`;
 export const ProjectsSectionRight = styled.div`
   display: flex;
   max-width: 60%;
@@ -89,23 +104,12 @@ export const ProjectsSectionRight = styled.div`
   align-items: stretch;
   justify-content: space-between;
 
+  &:hover ${ProjectsRightHeader} {
+    color: ${({ theme }) => theme.colors.secText};
+    text-shadow: 0 0 6px ${({ theme }) => theme.colors.secText};
+  }
   @media ${({ theme }) => theme.devices.mobile} {
     max-width: fit-content;
-  }
-`;
-
-export const ProjectsRightHeader = styled.p`
-  position: relative;
-  font-size: ${({ theme }) => theme.fontSizes.largeText.laptop};
-  color: ${({ theme }) => theme.colors.text};
-  font-weight: bold;
-  opacity: 0.7;
-
-  @media ${({ theme }) => theme.devices.tablet} {
-    font-size: ${({ theme }) => theme.fontSizes.largeText.tablet};
-  }
-  @media ${({ theme }) => theme.devices.mobile} {
-    font-size: ${({ theme }) => theme.fontSizes.largeText.tablet};
   }
 `;
 
@@ -119,6 +123,7 @@ export const ProjectsRightContainer = styled.div`
   box-shadow:
     0 0 12px 4px ${({ theme }) => theme.backgroundColors.grey},
     0 0 24px 8px ${({ theme }) => theme.backgroundColors.grey};
+
   @media ${({ theme }) => theme.devices.mobile} {
     max-width: 100%;
   }

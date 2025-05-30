@@ -12,9 +12,10 @@ import {
   LandingSectionTwoLinkContainer,
   LandingSectionTwoLink,
   CopiedInfo,
+  LandingSectionContainerText,
 } from './LandingView.styles';
 import cv from '/public/files/Tomasz Mielnicki.pdf';
-import photo from '../../../assets/me.png';
+import photo from '../../../assets/mee-removebg-preview.png';
 import {
   FaGithub,
   FaLinkedin,
@@ -33,15 +34,17 @@ export const LandingView: React.FC = () => {
     <>
       <LandingContainer id="home">
         <LandingSectionOne>
-          <LandingSectionOneText>
-            Hi, It's <span>Tom</span>.
-          </LandingSectionOneText>
+          <LandingSectionContainerText>
+            <LandingSectionOneText>
+              Hi, It's <span>Tom</span>.
+            </LandingSectionOneText>
+            <LandingSectionOneText>
+              I'm <span className="sec">Web Dev</span>
+            </LandingSectionOneText>
+          </LandingSectionContainerText>
           <LandingSectionOnePhoto>
             <img src={photo} alt="photo" />
           </LandingSectionOnePhoto>
-          <LandingSectionOneText>
-            I'm <span className="sec">Web Dev</span>
-          </LandingSectionOneText>
         </LandingSectionOne>
         <LandingSectionTwo>
           <LandingSectionTwoLeft>
